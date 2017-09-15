@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import Plant from "/.Plant"
+import Plant from "./Plant"
 
 
 function PlantFeed(props) {

@@ -1,10 +1,10 @@
 import React from "react";
-import CenterBox from "./CenterBox"
+import PostInput from "./PostInput"
 
 function App(props){
   return (
     <div>
-      <CenterBox/>
+      <PostInput/>
     </div>
   );
 }
