@@ -10,6 +10,18 @@ class PostInput extends React.Component {
       masterPlantList: []
     };
     this.handleNewPlantFormSubmission = this.handleNewPlantFormSubmission.bind(this);
+    this.displayWaterTime = this.displayWaterTime.bind(this);
+  }
+
+  displayWaterTime(plant) {
+    console.log("hello")
+    var newMasterPlantList = this.state.masterPlantList.slice();
+    for (var i = 0; i < newMasterPlantList.length; i++) {
+      if (newMasterPlantList[i] === plant) {
+        newMasterPlantList[i].displayWaterTime();
+      }
+    }
+    this.setState({masterPlantList:newMasterPlantList})
   }
 
   handleNewPlantFormSubmission(event) {
@@ -55,7 +67,8 @@ class PostInput extends React.Component {
               placeholder="Description"></input>
           <button type="submit">Add</button>
       </form>
-      <PlantFeed plantList={this.state.masterPlantList}/>
+      <PlantFeed plantList={this.state.masterPlantList}
+        childDisplayWaterTime={this.displayWaterTime}/>
       </div>
     )
   }

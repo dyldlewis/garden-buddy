@@ -10,14 +10,16 @@ function PlantFeed(props) {
       {props.plantList.map((plant, index) =>
         <Plant
           key={index}
-          plant={plant}/>
+          plant={plant}
+          grandDisplayWaterTime={props.childDisplayWaterTime}/>
       )}
     </div>
   );
 }
 
 PlantFeed.propTypes = {
-  plantList: PropTypes.array
+  plantList: PropTypes.array,
+  childDisplayWaterTime: PropTypes.func
 }
 
 export default PlantFeed;

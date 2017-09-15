@@ -12,9 +12,7 @@ class Plant {
 
 
   displayWaterTime() {
-    this.lastWater = "hello";
-    console.log("hello");
-    return this.lastWater;
+    this.lastWater = new Moment().format('MM/DD/YYYY')
   }
 }
 

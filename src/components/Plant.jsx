@@ -8,7 +8,7 @@ function Plant(props) {
     <div>
       <h1>{props.plant.name}</h1>
       <p>{props.plant.description}</p>
-      <button onClick={props.plant.displayWaterTime}>Water</button>
+      <button onClick={() => {props.grandDisplayWaterTime(props.plant)}}>Water</button>
       <p>{props.plant.lastWater}</p>
     </div>
 
@@ -17,7 +17,8 @@ function Plant(props) {
 
 
 Plant.propTypes = {
-  plant: PropTypes.object
+  plant: PropTypes.object,
+  grandDisplayWaterTime: PropTypes.func
 }
 
 export default Plant;
