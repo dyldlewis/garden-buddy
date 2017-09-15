@@ -8,6 +8,8 @@ function Plant(props) {
     <div>
       <h1>{props.plant.name}</h1>
       <p>{props.plant.description}</p>
+      <button onClick={props.plant.displayWaterTime}>Water</button>
+      <p>{props.plant.lastWater}</p>
     </div>
 
   )

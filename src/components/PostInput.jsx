@@ -1,10 +1,14 @@
 import React from 'react';
 import Plant from '../models/plant'
 import PropTypes from 'prop-types';
+import PlantFeed from "./PlantFeed"
 
 class PostInput extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      masterPlantList: []
+    };
     this.handleNewPlantFormSubmission = this.handleNewPlantFormSubmission.bind(this);
   }
 
@@ -13,8 +17,12 @@ class PostInput extends React.Component {
     const { _name } = this.refs;
     const { _description } = this.refs;
     var newPlant = new Plant(_name.value, _description.value);
-    this.props.onNewPlantCreation(newPlant);
-    _content.value = "";
+    var newMasterPlantList = this.state.masterPlantList.slice();
+    newMasterPlantList.push(newPlant);
+    this.setState({masterPlantList:newMasterPlantList})
+
+    _name.value = "";
+    _description.value = "";
   }
 
   render() {
@@ -31,7 +39,7 @@ class PostInput extends React.Component {
 
     return(
       <div>
-        <h3 style={titleStyle}>Blessed be...</h3>
+        <h3 style={titleStyle}>Add a plant to track</h3>
         <form onSubmit={this.handleNewPlantFormSubmission}>
           <input
             style={inputStyle}
@@ -47,13 +55,11 @@ class PostInput extends React.Component {
               placeholder="Description"></input>
           <button type="submit">Add</button>
       </form>
+      <PlantFeed plantList={this.state.masterPlantList}/>
       </div>
     )
   }
 }
 
-PostInput.proptypes = {
-  onNewPlantCreation: PropTypes.func
-}
 
 export default PostInput;
