@@ -2,8 +2,12 @@ import React from "react";
 import PostInput from "./PostInput"
 
 function App(props){
+  var centerAll = {
+    textAlign: "center"
+  }
+  
   return (
-    <div>
+    <div style={centerAll}>
       <PostInput/>
     </div>
   );

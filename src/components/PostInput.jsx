@@ -1,7 +1,8 @@
 import React from 'react';
 import Plant from '../models/plant'
 import PropTypes from 'prop-types';
-import PlantFeed from "./PlantFeed"
+import PlantFeed from "./PlantFeed";
+import { Button } from "react-bootstrap";
 
 class PostInput extends React.Component {
   constructor(props) {
@@ -41,17 +42,23 @@ class PostInput extends React.Component {
     var inputStyle = {
       display: "inline-block",
       marginLeft: "50px",
-      width: "65%",
+      width: "50%",
       height: "25px"
     }
     var titleStyle = {
       display: "inline-block",
-      marginLeft: "10px"
+      marginLeft: "10px",
+      color: "green",
+      fontFamily: "monospace"
     }
 
+    var imgStyle = {
+      width: "35px",
+      hegith: "35px"
+    }
     return(
       <div>
-        <h3 style={titleStyle}>Add a plant to track</h3>
+        <h3 style={titleStyle}>Add plants</h3><img style={imgStyle} src="http://www.pngpix.com/wp-content/uploads/2016/03/Plant-PNG-Image.png"/>
         <form onSubmit={this.handleNewPlantFormSubmission}>
           <input
             style={inputStyle}
@@ -65,9 +72,11 @@ class PostInput extends React.Component {
               type="text"
               id="description"
               placeholder="Description"></input>
-          <button type="submit">Add</button>
+            <h5><Button bsStyle="success" type="submit">Add</Button></h5>
       </form>
-      <PlantFeed plantList={this.state.masterPlantList}
+      <hr></hr>
+      <PlantFeed
+        plantList={this.state.masterPlantList}
         childDisplayWaterTime={this.displayWaterTime}/>
       </div>
     )

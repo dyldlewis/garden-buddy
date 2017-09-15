@@ -4,9 +4,17 @@ import Plant from "./Plant"
 
 
 function PlantFeed(props) {
+var headerStyle = {
+  color: "#8B4513"
+}
+var header = ""
+if (props.plantList.length > 0 ) {
+  header = <h1 style={headerStyle}>Your Plants</h1>
+}
 
   return (
     <div>
+      {header}
       {props.plantList.map((plant, index) =>
         <Plant
           key={index}

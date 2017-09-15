@@ -12,7 +12,7 @@ class Plant {
 
 
   displayWaterTime() {
-    this.lastWater = new Moment().format('MM/DD/YYYY')
+    this.lastWater = "Last watered: " + new Moment().format('MM/DD/YYYY')
   }
 }
 
