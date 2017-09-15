@@ -1,9 +1,10 @@
 import React from "react";
+import CenterBox from "./CenterBox"
 
 function App(props){
   return (
     <div>
-      <p>Garden Buddy</p>
+      <CenterBox/>
     </div>
   );
 }

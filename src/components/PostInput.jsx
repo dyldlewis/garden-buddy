@@ -1,5 +1,6 @@
 import React from 'react';
 import Plant from '../models/plant'
+import PropTypes from 'prop-types';
 
 class PostInput extends React.Component {
   constructor(props) {
